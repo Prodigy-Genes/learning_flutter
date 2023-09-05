@@ -1,12 +1,53 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyFirstApp());
+  runApp( const MyFirstApp());
 }
 
 class MyFirstApp extends StatelessWidget {
-  Widget build(BuildContext context){
-    return MaterialApp(home: Text('My First Flutter app from scratch'));
+  const MyFirstApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Test Your Personality',
+            style: TextStyle(fontSize: 36),
+          ),
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0), // Use 'const' for colors
+        ),
+        body: const Column(children: <Widget>[
+          Text(
+            'You need to answer a few questions',
+            style: TextStyle(fontSize: 22),),
+
+          ElevatedButton(
+            onPressed: null,
+            child: Text('You Have Chosen Answer 1',
+            style: TextStyle(
+              fontSize: 18
+            ),)
+          ),
+          ElevatedButton(
+            onPressed: null,
+            child: Text('You Have Chosen Answer 2',
+            style: TextStyle(
+              fontSize: 18
+            )),
+          ),
+          ElevatedButton(
+            onPressed: null,
+            child: Text('You Have Chosen Answer 3',
+            style: TextStyle(
+              fontSize: 18
+            ),)
+          )
+        ],),
+      ),
+    );
+    
   }
 }
 
