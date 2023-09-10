@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const MyFirstApp());
+  runApp(const MyFirstApp());
 }
 
 class MyFirstApp extends StatelessWidget {
@@ -12,44 +12,38 @@ class MyFirstApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: const IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation menu',
+            onPressed: null,),
           title: const Text(
-            'Test Your Personality',
-            style: TextStyle(fontSize: 36),
+            'Test Your Knowledge...',
+            style: TextStyle(fontSize: 25.0, fontStyle: FontStyle.normal),
           ),
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0), // Use 'const' for colors
+          actions: const <Widget> [
+            IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,),
+          ],
+          
         ),
-        body: const Column(children: <Widget>[
-          Text(
-            'You need to answer a few questions',
-            style: TextStyle(fontSize: 22),),
-
-          ElevatedButton(
-            onPressed: null,
-            child: Text('You Have Chosen Answer 1',
-            style: TextStyle(
-              fontSize: 18
-            ),)
+        body: const Center(
+          child: Text('First Flutter Application...',
+          style: TextStyle(fontSize: 20.00,
+          fontStyle: FontStyle.italic),
           ),
-          ElevatedButton(
-            onPressed: null,
-            child: Text('You Have Chosen Answer 2',
-            style: TextStyle(
-              fontSize: 18
-            )),
-          ),
-          ElevatedButton(
-            onPressed: null,
-            child: Text('You Have Chosen Answer 3',
-            style: TextStyle(
-              fontSize: 18
-            ),)
-          )
-        ],),
+        ),
+        floatingActionButton: const FloatingActionButton(
+          tooltip: 'Add',
+          onPressed: null,
+          child: Icon(Icons.add),
+        )
       ),
     );
-    
   }
 }
+
 
 /*
 class MyApp extends StatelessWidget {
